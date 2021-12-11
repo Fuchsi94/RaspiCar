@@ -1,0 +1,33 @@
+#!/bin/bash
+# remove old versions, if not placed in a virtual environment (let pip search for them)
+echo "remove old tf version"
+sudo pip uninstall tensorflow
+sudo pip3 uninstall tensorflow
+# utmost important: use only numpy version 1.19.5
+echo "install numpy1.19.5"
+sudo -H pip3 install numpy==1.19.5
+# install the dependencies (if not already onboard)
+echo "install dependencies"
+sudo apt-get install gfortran
+sudo apt-get install libhdf5-dev libc-ares-dev libeigen3-dev
+sudo apt-get install libatlas-base-dev libopenblas-dev libblas-dev
+sudo apt-get install liblapack-dev
+#upgrade setuptools 40.8.1 -> 57.4.0
+echo "upgrade setuptools"
+sudo -H pip3 install --upgrade setuptools
+sudo -H pip3 install pybind11
+sudo -H pip3 install Cython
+#install h5py with Cython version 0.29.23 (± 15 min @1500 MHz)
+echo "install h5py"
+sudo -H pip3 install h5py==3.1.0
+# install gdown to download from Google drive
+echo "install gdown"
+pip3 install gdown
+# download the wheel
+cd ~
+gdown https://drive.google.com/uc?id=1BLXP7RKEfTp9fxbmI8Qu2FdhU7NUxcwV
+# install TensorFlow 2.6.0 (± 68 min @1500 MHz)
+echo "install tensorflow"
+sudo -H pip3 install tensorflow-2.6.0-cp37-cp37m-linux_aarch64.whl
+echo "tensorflow installed successfully"
+pip3 install keras==2.6

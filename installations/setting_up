@@ -1,0 +1,10 @@
+#!/bin/bash
+#update raspberry pi
+sudo apt-get clean
+sudo apt-get autoremove
+sudo apt-get update
+sudo apt full-upgrade
+sudo apt dist-upgrade
+sudo apt-get install xboxdrv
+sudo pip3 install Adafruit_PCA9865
+echo "Pi is up to date"
