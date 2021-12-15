@@ -33,5 +33,9 @@ class Motor:
         
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+    print("Moving")
     motor = Motor(pin=1)
+    motor.moveForward()
+    logging.info("Car moving forward")
+    sleep(2)
     motor.stop()

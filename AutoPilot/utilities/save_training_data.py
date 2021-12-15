@@ -34,7 +34,6 @@ else:
     print('created IMG folder')
 time.sleep(0.5)
 
-throttle = 0
 reverse = 0
 speed = 0
 
@@ -56,10 +55,18 @@ print('set servo values')
 time.sleep(0.5)
 
 #init camera
+WIDTH = 320
+HEIGHT = 160
 vid = cv2.VideoCapture(0)
+#vid = cv2.VideoCapture(0, cv2.CAP_V4L2)
+#vid.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
+#vid.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+#vid.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
 print('started Videostream')
 run = True
 time.sleep(0.5)
+
+
 
 count = 0
 while run:
@@ -83,10 +90,11 @@ while run:
     #print(steering_angle)
     pwm.set_pwm(0, 0, int(pwm_signal))
 
-
+    steering = x
+    
     date = datetime.datetime.now()
     csvstr = datetime.datetime.strftime(date, '%Y_%m_%d_%H_%M_%S')
-    driving_log['{}/training_data/IMG/center_{}_{}.jpg'.format(output_path, csvstr, count)] = steering_angle , throttle, reverse, speed
+    driving_log['{}/training_data/IMG/center_{}_{}.jpg'.format(output_path, csvstr, count)] = steering , throttle, reverse, speed
     cv2.imwrite('{}/training_data/IMG/center_{}_{}.jpg'.format(output_path, csvstr, count), frame)
     print('{}_{}.jpg steering_angle {}'.format(csvstr, count, steering_angle))
     time.sleep(0.01) # 30FPS
@@ -100,7 +108,7 @@ if os.path.isfile('{}/training_data/driving_log.csv'.format(output_path)):
         writer = csv.writer(file)        
     
         for key, value in driving_log.items():
-            writer.writerow([key, value])
+            writer.writerow([key, value[0], value[1], value[2], value[3]])
         
 else:
     with open('{}/training_data/driving_log.csv'.format(output_path), 'w') as file:
