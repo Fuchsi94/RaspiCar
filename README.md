@@ -49,6 +49,7 @@ installation readme
 
 ### 4) Lande Detection
 
+[model_training](https://github.com/Fuchsi94/model_training)
 train_model/lane_detection
 
 ### 5) Traffic Sign Detection
