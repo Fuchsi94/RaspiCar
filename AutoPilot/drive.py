@@ -7,7 +7,7 @@ from sensor.cv2_videostream import VideoStream
 from navigation.model import loadTrainedModel, preprocessing
 from utilities.xbox import Joystick
 
-def stabilize_steering_angle(curr_steering_angle, new_steering_angle, max_angle_deviation=5):
+def stabilize_steering_angle(curr_steering_angle, new_steering_angle, max_angle_deviation=8):
     """
     Using last steering angle to stabilize the steering angle
     This can be improved to use last N angles, etc
@@ -15,19 +15,20 @@ def stabilize_steering_angle(curr_steering_angle, new_steering_angle, max_angle_
     """
     
     angle_deviation = new_steering_angle - curr_steering_angle
-    
+    print("angle deviation", angle_deviation)
     if abs(angle_deviation) > max_angle_deviation:
-        stabilized_steering_angle = int(curr_steering_angle
-                                        + max_angle_deviation * angle_deviation / abs(angle_deviation))
+        stabilized_steering_angle = int(curr_steering_angle + max_angle_deviation * angle_deviation / abs(angle_deviation))
     else:
         stabilized_steering_angle = new_steering_angle
-    logging.info('Proposed angle: %s, stabilized angle: %s' % (new_steering_angle, stabilized_steering_angle))
+    print("stabilized", stabilized_steering_angle)
+    print("new steering angle", new_steering_angle)
+        
     return stabilized_steering_angle
 
 def run(car, videostream, model):
     videostream.start()
     go = True
-    car.move(362)
+    car.move(361)
     steering_angle = 0
     while go:
         # Grab frame from video stream
@@ -35,9 +36,11 @@ def run(car, videostream, model):
         img = preprocessing(np.asarray(frame))
         img = np.array([img])
         pred_steering_angle = float(model.predict(img)) * 20
+        print("predicted", pred_steering_angle)
         steering_angle = stabilize_steering_angle(steering_angle, pred_steering_angle)
+        print("steering", steering_angle)
+        #steering_angle = pred_steering_angle
         car.turn(steering_angle)
-        print(steering_angle)
         cv2.imshow("frame", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             go = False
