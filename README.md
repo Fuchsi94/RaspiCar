@@ -35,14 +35,15 @@ Guide for building a small-scale prototype of an autonomous vehicle with a Raspb
 
 ### 2) Assembly
 
-Mechanical Components:
-Chassi
-3D Print CAD Model
-Electrical Components:
-Raspi
-Cam
-PCA with servo and ecu (i2c)
-DC/DC Converter
+1. Mechanical Components:
+1.1 Chassi
+1.2 3D Print CAD Model
+2. Electrical Components:
+2.1 Raspi
+2.2 Cam
+2.3 PCA with servo and ecu (i2c)
+2.4 DC/DC Converter
+
 
 ### 3) Setup
 
