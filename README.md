@@ -1,6 +1,7 @@
 # RaspiCar
 
-![RaspiCar](./img/car1.jpg)
+<!-- <img src="./img/car3.jpg" alt="drawing" height="400" width="600"/> -->
+![RaspiCar](./img/car3.jpg)
 
 ## Intro
 
