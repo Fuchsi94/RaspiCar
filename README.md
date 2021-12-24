@@ -8,6 +8,7 @@
 This Project is a guide for building a small-scale prototype of an autonomous vehicle. The Car will be controlled through a Raspberry Pi. 
 With an Camera and the open-source python package from OpenCV the car will be able to percept with its environment. We will train a deep neural network with tensorflow and keras so the car is able to interact with its environment and steer through a small track. 
 
+Goal of this work is a deeper understanding how neural networks work
 
 ## Contents
 1. [Intor](#intro)
