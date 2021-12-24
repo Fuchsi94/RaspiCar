@@ -5,33 +5,26 @@
 
 ## Intro
 
-Guide for building a small-scale prototype of an autonomous vehicle with a Raspberry Pi, OpenCV, Tensorflow and Keras.
+This Project is a guide for building a small-scale prototype of an autonomous vehicle. The Car will be controlled through a Raspberry Pi. 
+With an Camera and the open-source python package from OpenCV the car will be able to percept with its environment. We will train a deep neural network with tensorflow and keras so the car is able to interact with its environment and steer through a small track. 
+
 
 ## Contents
-1. [Project Objectives](#project-objectives)
+1. [Intor](#intro)
 2. [Prerequsite](#prerequisite)
 3. [Assembly](#assembly)
 4. [Setup](#setup)
 5. [Model Training](#model-training)
 
-### Project Objectives
-
-1. Prerequisite
-2. Assembly
-3. Setup
-4. Lane Detection
-5. Traffic Sign Detection
-
-
 ### Prerequisite
 
 #### Hardware
 
-1. Tamiya TT02 Chassi
-2. Raspberry Pi 4
-3. Camera (optional with Wide-Angle-Lense)
-4. Adafruit PCA 9865
-5. DC/DC Converter
+1. [Tamiya TT02 Chassi](https://www.amazon.de/gp/product/B01MDUQ1W6/ref=ppx_yo_dt_b_asin_title_o02_s02?ie=UTF8&psc=1)
+2. [Raspberry Pi 4](https://www.amazon.de/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o04_s01?ie=UTF8&psc=1)
+3. [PiCamera (optional with Wide-Angle-Lense)](https://www.amazon.de/gp/product/B09J8GYGQ8/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1)
+4. [Adafruit PCA 9865](https://www.amazon.de/gp/product/B07BS8B637/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+5. [DC/DC Converter](https://www.amazon.de/gp/product/B07Q895HZ9/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1)
 6. 3D printed parts
 
 #### Skills
