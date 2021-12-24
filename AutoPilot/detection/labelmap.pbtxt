@@ -1,0 +1,60 @@
+item { 
+	name:'vorfahrt gewähren'
+	id:1
+	display_name:'vorfahrt gewähren'
+}
+item { 
+	name:'rechts halten'
+	id:2
+	display_name:'rechts halten'
+}
+item { 
+	name:'radfahrer'
+	id:3
+	display_name:'radfahrer'
+}
+item { 
+	name:'fahrtrichtung rechts'
+	id:4
+	display_name:'fahrtrichtung rechts'
+}
+item { 
+	name:'fußgängerüberweg'
+	id:5
+	display_name:'fußgängerüberweg'
+}
+item { 
+	name:'parken'
+	id:6
+	display_name:'parken'
+}
+item { 
+	name:'stop'
+	id:7
+	display_name:'stop'
+}
+item { 
+	name:'verbot der einfahrt'
+	id:8
+	display_name:'verbot der einfahrt'
+}
+item { 
+	name:'tempolimit 50'
+	id:9
+	display_name:'tempolimit 50'
+}
+item { 
+	name:'tempolimit 30'
+	id:10
+	display_name:'tempolimit 30'
+}
+item { 
+	name:'verengte fahrbahn'
+	id:11
+	display_name:'verengte fahrbahn'
+}
+item { 
+	name:'lichtzeichenanlage'
+	id:12
+	display_name:'lichtzeichenanlage'
+}
