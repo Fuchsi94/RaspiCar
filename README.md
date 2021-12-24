@@ -7,8 +7,14 @@
 
 Guide for building a small-scale prototype of an autonomous vehicle with a Raspberry Pi, OpenCV, Tensorflow and Keras.
 
+## Contents
+1. [Project Objectives](#project-objectives)
+2. [Prerequsite](#prerequisite)
+3. [Assembly](#assembly)
+4. [Setup](#setup)
+5. [Model Training](#model-training)
 
-## Project Objectives
+### Project Objectives
 
 1. Prerequisite
 2. Assembly
@@ -17,7 +23,7 @@ Guide for building a small-scale prototype of an autonomous vehicle with a Raspb
 5. Traffic Sign Detection
 
 
-### 1) Prerequisite
+### Prerequisite
 
 #### Hardware
 
@@ -33,27 +39,49 @@ Guide for building a small-scale prototype of an autonomous vehicle with a Raspb
 1. Basic Python programming skills
 2. Basic Linux operating system (cli)
 
-### 2) Assembly
+### Assembly
 
 1. Mechanical Components:
-1.1 Chassi
-1.2 3D Print CAD Model
+  - Chassi
+  - 3D Print CAD Model
 2. Electrical Components:
-2.1 Raspi
-2.2 Cam
-2.3 PCA with servo and ecu (i2c)
-2.4 DC/DC Converter
+  - Raspi
+  - Cam
+  - PCA with servo and ecu (i2c)
+  - DC/DC Converter
+
+Connect Electric Circuit:
+![Electric Circuit](./img/Electric_Circuit.jpg)
+![RaspberryPi Pins](./img/RaspiPins.jpg)
 
 
-### 3) Setup
+### Setup
 
-installation readme
+Software Dependencies:
 
-### 4) Lande Detection
+[Raspbian Os 64-Bit](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-05-28/)
+- Python 3.7
+- Pillow 5.4.1
+- Numpy 1.19.5
+- Keras 2.6.0
+- Tensorflow 2.6.0
+- TFLite-Runtime 2.5.0
+- OpenCVLite (Lightweight OpenCV Package with all needed Functions for the RaspiCar)
+- Adafruit-PCA9685 1.0.1
 
-[model_training](https://github.com/Fuchsi94/model_training)
+All steps for installation is written in the installation Readme
+
+### Model Training
+If your interested in the Training Process of the Neural Networks you find the code
+in the [model training](https://github.com/Fuchsi94/model-training) repository.
+
+#### Lane Detection
+
+[lane detection](https://github.com/Fuchsi94/model-training/tree/master/Lane-Detection)
+
 train_model/lane_detection
 
-### 5) Traffic Sign Detection
+#### Traffic Sign Detection
 
+[traffic sign detection](https://github.com/Fuchsi94/model-training/tree/master/Traffic-Sign-Detection)
 train_model/object_detection
