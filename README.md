@@ -90,7 +90,8 @@ For control the car's lateral motion, an Convolutional Neural Network based on a
 #### Traffic Sign Detection
 
 (further task)
-To control the car's longitudinal motion, we will first implement a simple decision model as follow: keep moving forward until encountering an obstacle. We can use data from an ultrasonic sensor to detect if there any hindering obstacle in front of the car. Later, we can add road conditions to the forward motion including stopping for 3 seconds if the car sees a stop sign.
+Implement the Traffic-Sign-Detection-Model
+<!--To control the car's longitudinal motion, we will first implement a simple decision model as follow: keep moving forward until encountering an obstacle. We can use data from an ultrasonic sensor to detect if there any hindering obstacle in front of the car. Later, we can add road conditions to the forward motion including stopping for 3 seconds if the car sees a stop sign.-->
 
 [Traffic Sign Dataset](https://github.com/Fuchsi94/traffic-sign-training-data)
 [traffic sign detection](https://github.com/Fuchsi94/model-training/tree/master/Traffic-Sign-Detection)
