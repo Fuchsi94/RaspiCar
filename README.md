@@ -8,7 +8,6 @@
 This Project is a guide for building a small-scale prototype of an autonomous vehicle. The Car will be controlled through a Raspberry Pi. 
 With an Camera and the open-source python package from OpenCV the car will be able to percept with its environment. We will train a deep neural network with tensorflow and keras so the car is able to interact with its environment and steer through a small track. 
 
-Goal of this work is a deeper understanding how neural networks work
 
 ## Contents
 1. [Intor](#intro)
@@ -46,6 +45,7 @@ Goal of this work is a deeper understanding how neural networks work
 
 Connect Electric Circuit:
 ![Electric Circuit](./img/Electric_Circuit.jpg)
+
 ![RaspberryPi Pins](./img/RaspiPins.jpg)
 
 
@@ -65,18 +65,26 @@ Software Dependencies:
 
 All steps for installation is written in the installation Readme
 
+
 ### Model Training
-If your interested in the Training Process of the Neural Networks you find the code
+
+For simplicity, we will consider the car's motion into **two separate and independent motions:** lateral motion (steering, left and right) and longitudinal motion (acceleration and braking, forward and backward). If your interested in the Training Process of the Neural Networks you find the code
 in the [model training](https://github.com/Fuchsi94/model-training) repository.
 
 #### Lane Detection
 
-[Lane Dataset]()
+(completed)
+For control the car's lateral motion, an Convolutional Neural Network based on an end-to-end approach is responsible. The Neural Network takes an image and outputs the steering command needed to keep the car centered on the track. This neural network will be trained with footage taken while driving the model per hand. As example for the Network architecture serves the end-to-end deep learning approach from nvidea. https://developer.nvidia.com/blog/deep-learning-self-driving-cars/
+
+[Lane Dataset](https://github.com/Fuchsi94/lane-training-data)
 [lane detection](https://github.com/Fuchsi94/model-training/tree/master/Lane-Detection)
 
 
 #### Traffic Sign Detection
 
-[Traffic Sign Dataset]()
+(further task)
+To control the car's longitudinal motion, we will first implement a simple decision model as follow: keep moving forward until encountering an obstacle. We can use data from an ultrasonic sensor to detect if there any hindering obstacle in front of the car. Later, we can add road conditions to the forward motion including stopping for 3 seconds if the car sees a stop sign.
+
+[Traffic Sign Dataset](https://github.com/Fuchsi94/traffic-sign-training-data)
 [traffic sign detection](https://github.com/Fuchsi94/model-training/tree/master/Traffic-Sign-Detection)
 
