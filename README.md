@@ -44,6 +44,13 @@ With an Camera and the open-source python package from OpenCV the car will be ab
   - DC/DC Converter
 
 Connect Electric Circuit:
+
+The PCA9685 module is controlled via the I2C bus (SDA and SCL).
+The bus is supplied with power via 3.3V. The Servo is powered by the Raspberry Pi and the ESC is powered by the Akku.
+So a external Powersource for the PCA is not requiered. The remaining pins (V+ and OE) remain unused. The used Pins are specified in the Connection Table. The Circuit is connected as shown in the illustration.
+
+![Connection Table](./img/connection_table.png)
+
 ![Electric Circuit](./img/Electric_Circuit.jpg)
 
 ![RaspberryPi Pins](./img/RaspiPins.jpg)
