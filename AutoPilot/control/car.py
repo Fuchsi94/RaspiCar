@@ -45,7 +45,6 @@ class Car:
         self.pwm.set_pwm(self.motor_pin, 0, speed)
         
     def calibrate(self):
-        #self.neutral()
         self.neutral()
 
     def left(self):
