@@ -48,10 +48,11 @@ The PCA9685 module is controlled via the I2C bus (SDA and SCL).
 The bus is supplied with power via 3.3V. The Servo is powered by the Raspberry Pi and the ESC is powered by the Akku.
 The used Pins are specified in the Connection Table. The Circuit is connected as shown in the illustration.
 
+<!-- <img src="./img/connection_table.pngg" alt="drawing" height="300" width="400"/> -->
 ![Connection Table](./img/connection_table.png)
-
+<!-- <img src="Electric_Circuit.jpg" alt="drawing" height="300" width="400"/> -->
 ![Electric Circuit](./img/Electric_Circuit.jpg)
-
+<!-- <img src="./img/RaspiPins.jpg" alt="drawing" height="300" width="400"/> -->
 ![RaspberryPi Pins](./img/RaspiPins.jpg)
 
 
