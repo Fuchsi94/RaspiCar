@@ -10,11 +10,10 @@ With an Camera and the open-source python package from OpenCV the car will be ab
 
 
 ## Contents
-1. [Intor](#intro)
-2. [Prerequsite](#prerequisite)
-3. [Assembly](#assembly)
-4. [Setup](#setup)
-5. [Model Training](#model-training)
+1. [Prerequsite](#prerequisite)
+2. [Assembly](#assembly)
+3. [Setup](#setup)
+4. [Model Training](#model-training)
 
 ### Prerequisite
 
@@ -25,7 +24,7 @@ With an Camera and the open-source python package from OpenCV the car will be ab
 3. [PiCamera (optional with Wide-Angle-Lense)](https://www.amazon.de/gp/product/B09J8GYGQ8/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1)
 4. [Adafruit PCA 9865](https://www.amazon.de/gp/product/B07BS8B637/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 5. [DC/DC Converter](https://www.amazon.de/gp/product/B07Q895HZ9/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1)
-6. 3D printed parts
+6. [3D printed parts](https://github.com/Fuchsi94/cad-files-raspicar)
 
 #### Skills
 
@@ -47,7 +46,7 @@ Connect Electric Circuit:
 
 The PCA9685 module is controlled via the I2C bus (SDA and SCL).
 The bus is supplied with power via 3.3V. The Servo is powered by the Raspberry Pi and the ESC is powered by the Akku.
-So a external Powersource for the PCA is not requiered. The remaining pins (V+ and OE) remain unused. The used Pins are specified in the Connection Table. The Circuit is connected as shown in the illustration.
+The used Pins are specified in the Connection Table. The Circuit is connected as shown in the illustration.
 
 ![Connection Table](./img/connection_table.png)
 
@@ -70,9 +69,6 @@ Software Dependencies:
 - OpenCVLite (Lightweight OpenCV Package with all needed Functions for the RaspiCar)
 - Adafruit-PCA9685 1.0.1
 
-All steps for installation is written in the installation Readme
-
-
 ### Model Training
 
 For simplicity, we will consider the car's motion into **two separate and independent motions:** lateral motion (steering, left and right) and longitudinal motion (acceleration and braking, forward and backward). If your interested in the Training Process of the Neural Networks you find the code
@@ -80,18 +76,15 @@ in the [model training](https://github.com/Fuchsi94/model-training) repository.
 
 #### Lane Detection
 
-(completed)
 For control the car's lateral motion, an Convolutional Neural Network based on an end-to-end approach is responsible. The Neural Network takes an image and outputs the steering command needed to keep the car centered on the track. This neural network will be trained with footage taken while driving the model per hand. As example for the Network architecture serves the end-to-end deep learning approach from nvidea. https://developer.nvidia.com/blog/deep-learning-self-driving-cars/
 
 [Lane Dataset](https://github.com/Fuchsi94/lane-training-data)
 [lane detection](https://github.com/Fuchsi94/model-training/tree/master/Lane-Detection)
 
-
 #### Traffic Sign Detection
 
 (further task)
 Implement the Traffic-Sign-Detection-Model
-<!--To control the car's longitudinal motion, we will first implement a simple decision model as follow: keep moving forward until encountering an obstacle. We can use data from an ultrasonic sensor to detect if there any hindering obstacle in front of the car. Later, we can add road conditions to the forward motion including stopping for 3 seconds if the car sees a stop sign.-->
 
 [Traffic Sign Dataset](https://github.com/Fuchsi94/traffic-sign-training-data)
 [traffic sign detection](https://github.com/Fuchsi94/model-training/tree/master/Traffic-Sign-Detection)
