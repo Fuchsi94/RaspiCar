@@ -37,7 +37,7 @@ With an Camera and the open-source python package from OpenCV the car will be ab
   - Chassi
   - 3D Print CAD Model
 2. Electrical Components:
-  - Raspi
+  - Raspberry Pi
   - Cam
   - PCA with servo and ecu (i2c)
   - DC/DC Converter
@@ -45,7 +45,6 @@ With an Camera and the open-source python package from OpenCV the car will be ab
 Connect Electric Circuit:
 
 The PCA9685 module is controlled via the I2C bus (SDA and SCL).
-The bus is supplied with power via 3.3V. The Servo is powered by the Raspberry Pi and the ESC is powered by the Akku.
 The used Pins are specified in the Connection Table. The Circuit is connected as shown in the illustration.
 
 <img src="./img/connection_table.png" alt="drawing" height="100" width="200"/>
@@ -61,28 +60,29 @@ Software Dependencies:
 - Pillow 5.4.1
 - Numpy 1.19.5
 - Keras 2.6.0
-- Tensorflow 2.6.0
+- TensorFlow 2.6.0
 - TFLite-Runtime 2.5.0
-- OpenCVLite (Lightweight OpenCV Package with all needed Functions for the RaspiCar)
+- OpenCV / OpenCVLite
 - Adafruit-PCA9685 1.0.1
 
 ### Model Training
-
-For simplicity, we will consider the car's motion into **two separate and independent motions:** lateral motion (steering, left and right) and longitudinal motion (acceleration and braking, forward and backward). If your interested in the Training Process of the Neural Networks you find the code
-in the [model training](https://github.com/Fuchsi94/model-training) repository.
+Each training script can be found in the [model training](https://github.com/Fuchsi94/model-training) repository.
 
 #### Lane Detection
 
-For control the car's lateral motion, an Convolutional Neural Network based on an end-to-end approach is responsible. The Neural Network takes an image and outputs the steering command needed to keep the car centered on the track. This neural network will be trained with footage taken while driving the model per hand. As example for the Network architecture serves the end-to-end deep learning approach from nvidea. https://developer.nvidia.com/blog/deep-learning-self-driving-cars/
+Behavioural Cloning concept
 
 [Lane Dataset](https://github.com/Fuchsi94/lane-training-data)
+
 [lane detection](https://github.com/Fuchsi94/model-training/tree/master/Lane-Detection)
 
 #### Traffic Sign Detection
 
-(further task)
-Implement the Traffic-Sign-Detection-Model
+[Traffic-Sign-Classification]()
+
+TensorFlow Object Detection
 
 [Traffic Sign Dataset](https://github.com/Fuchsi94/traffic-sign-training-data)
+
 [traffic sign detection](https://github.com/Fuchsi94/model-training/tree/master/Traffic-Sign-Detection)
 
